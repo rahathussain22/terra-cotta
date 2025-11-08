@@ -17,7 +17,7 @@ const Signup = () => {
         try {
             setIsLoading(true)
             // Send POST request to the backend API for signup
-            await axios.post('http://localhost:8000/auth/register', {
+            await axios.post('/api/auth/register', {
                 username, // Send the username
                 email,    // Send the email
                 password, // Send the password

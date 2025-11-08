@@ -21,7 +21,7 @@ const Login = () => {
         try {
             setIsLoading(true)
             // Send POST request to the backend API for login
-            const response = await axios.post('http://localhost:8000/auth/login', {
+            const response = await axios.post('/api/auth/login', {
                 email,    // Send the email
                 password, // Send the password
             });
