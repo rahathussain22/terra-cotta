@@ -17,7 +17,7 @@ const Signup = () => {
         try {
             setIsLoading(true)
             // Send POST request to the backend API for signup
-            await axios.post('/api/auth/register', {
+            await axios.post('http://192.168.1.13:8000/auth/register', {
                 username, // Send the username
                 email,    // Send the email
                 password, // Send the password
@@ -26,6 +26,7 @@ const Signup = () => {
             // If the response is successful, display success message
             setSuccessMessage('Signup successful! Please log in.');
             setErrorMessage(''); // Clear any previous error messages
+             navigate("/login")
         } catch (error) {
             // Handle errors (e.g., email already exists, weak password, etc.)
             if (error.response) {
@@ -37,7 +38,6 @@ const Signup = () => {
         }
         finally{
             setIsLoading(false)
-            navigate("/login")
         }
     };
 
