@@ -2,8 +2,14 @@ import axios from 'axios';
 
 const API_BASE = import.meta.env.VITE_REACT_APP_API_BASE || 'http://192.168.1.13:4000/api';
 
+// const api = axios.create({
+//   baseURL: API_BASE,
+//   headers: { 'Content-Type': 'application/json' }
+// });
+
 const api = axios.create({
-  baseURL: API_BASE,
+  baseURL: `${API_BASE}/api`,
+  withCredentials: true,
   headers: { 'Content-Type': 'application/json' }
 });
 
