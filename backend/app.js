@@ -16,7 +16,7 @@ app.use(cookieParser())
 //Routes
 
 import authRouter from "./src/route/auth.route.js";
-app.use("/Auth", authRouter);
+app.use("/api/auth", authRouter);
 
 
 

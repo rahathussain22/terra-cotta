@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import api, { setAuthToken } from '../utils/apiClient';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
 
 export const AuthContext = createContext();
 
@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
     if (token) {
       setAuthToken(token);
       try {
-        const { exp } = jwt_decode(token);
+        const  exp  = jwtDecode(token);
         if (Date.now() >= exp * 1000) {
           logout();
         } else {
